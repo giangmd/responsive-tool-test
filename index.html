@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Test Online</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style type="text/css" media="screen">
+        body{margin:0 auto;text-align:center}.tool-box{padding:15px 0;margin-bottom:20px;border-bottom:1px solid #ddd}.logo{display:inline-block;width:100px;height:60px;vertical-align:middle}.logo img{width:100%;height:100%;object-fit:contain}.tool-box ul{list-style:none;display:inline-block;margin:0 0 0 40px;padding:0}.tool-box ul li{display:inline-block;position:relative}.tool-box ul li a{display:block;border-right:1px solid #ddd;font-size:22px;padding:0 10px;color:#ea4335;text-decoration:none}.tool-box ul li:last-child a{border-right:none}.tool-box ul li ul{display:none;position:absolute;margin:0;padding:0;width:140px;border:1px solid #ddd;transition:.25s all;z-index:99999;background-color:#fff}.tool-box ul li ul li{display:block;background-color:#fff}.tool-box ul li ul li a{display:block;border-bottom:1px solid #ddd;border-right:none;font-size:18px;padding:10px;color:#4385f4;text-decoration:none;font-weight:700;background-color:#fff}.tool-box ul li ul li:last-child a{border-bottom:none}.dis-size{display:inline-block;font-size:22px;margin-left:40px;color:#000}.dis-size span{font-weight:700;color:#4385f4}.dis-rotate{display:inline-block;margin-left:40px}.dis-rotate a{display:inline-block;font-size:22px;color:#34a753;padding:0 15px;text-decoration:none;transition:.5s all}.dis-rotate a.active{text-decoration:underline}iframe{border:none;width:50%;height:70vh;margin:0 auto;overflow:auto;box-shadow:0 1px 4px 0 rgba(0,0,0,.37)}
+    </style>
+
+    <script src="jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        $(document).ready(function(){var t=prompt("Please enter your url","http://");if(null==t)return alert("Stop"),!1;function e(){document.getElementById("pageiframe").contentWindow.location.reload(!0)}window.url=t,$("iframe").attr("src",window.url),$(".c-list").on("click",function(t){t.preventDefault(),$(".sub-menu").hide(),$(this).closest("li").find("ul").show()}),$(".item-menu").on("click",function(t){t.preventDefault(),$(this).closest("ul").hide(),$(".portrait").addClass("active"),$(".landscape").removeClass("active"),$(".dis-size").find(".s").html($(this).text()),window.w=$(this).data("w"),window.h=$(this).data("h"),$("iframe").css({width:parseInt(window.w)+"px",height:parseInt(window.h)+"px"}),e()}),$(".portrait").on("click",function(t){t.preventDefault(),$(this).addClass("active"),$(".landscape").removeClass("active"),$("iframe").css({width:parseInt(window.w)+"px",height:parseInt(window.h)+"px"}),e()}),$(".landscape").on("click",function(t){t.preventDefault(),$(this).addClass("active"),$(".portrait").removeClass("active"),$("iframe").css({width:parseInt(window.h)+"px",height:parseInt(window.w)+"px"}),e()})});
+    </script>
+</head>
+<body>
+
+    <div class="tool-box">
+        <div class="logo">
+            <a href="" title="">
+                <img src="icon-responsive-blue.png" alt="">
+            </a>
+        </div>
+
+        <ul>
+            <li>
+                <a href="#" class="c-list">Desktops Screen</a>
+                <ul class="sub-menu">
+                    <li><a href="#" class="item-menu" data-w="1680" data-h="1050">1680 x 1050</a></li>
+                    <li><a href="#" class="item-menu" data-w="1920" data-h="1080">1920 x 1080</a></li>
+                    <li><a href="#" class="item-menu" data-w="2560" data-h="1440">2560 x 1440</a></li>
+                    <li><a href="#" class="item-menu" data-w="2560" data-h="1600">2560 x 1600</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="c-list">Tablets Screen</a>
+                <ul class="sub-menu">
+                    <li><a href="#" class="item-menu" data-w="768" data-h="1024">768 x 1024</a></li>
+                    <li><a href="#" class="item-menu" data-w="800" data-h="1280">800 x 1280</a></li>
+                    <li><a href="#" class="item-menu" data-w="1024" data-h="1366">1024 x 1366</a></li>
+                    <li><a href="#" class="item-menu" data-w="1280" data-h="850">1280 x 850</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="c-list">Phones Screen</a>
+                <ul class="sub-menu">
+                    <li><a href="#" class="item-menu" data-w="320" data-h="568">320 x 568</a></li>
+                    <li><a href="#" class="item-menu" data-w="360" data-h="640">360 x 640</a></li>
+                    <li><a href="#" class="item-menu" data-w="375" data-h="667">375 x 667</a></li>
+                    <li><a href="#" class="item-menu" data-w="412" data-h="732">412 x 732</a></li>
+                    <li><a href="#" class="item-menu" data-w="414" data-h="736">414 x 736</a></li>
+                    <li><a href="#" class="item-menu" data-w="480" data-h="853">480 x 853</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="dis-rotate">
+            <a href="#" class="portrait active">Portrait</a>
+            <a href="#" class="landscape">Landscape</a>
+        </div>
+
+        <div class="dis-size">Size: <span class="s">Auto</span></div>
+
+    </div>
+
+    <iframe id="pageiframe" src=""></iframe>
+
+</body>
+</html>
